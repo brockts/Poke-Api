@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <div>
+    {% for item in database.items %}
+        {{item}}
+    {% endfor %}
+    </div>  
+
+{% endblock%}
