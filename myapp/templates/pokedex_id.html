@@ -1,0 +1,9 @@
+{%extends "base.html"%}
+
+{% block content%}
+<div>
+    {%for value in database.values%}
+    {{value}} <br>
+    {%endfor%}
+</div>
+{%endblock%}
