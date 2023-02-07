@@ -2,6 +2,7 @@
 
 {% block content%}
 <div>
+    <h1>Pokemon {{database.name}}</h1>
     {%for key,value in database.items%}
     {{key}} : {{value}} <br>
     {%endfor%}

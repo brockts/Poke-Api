@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+    <h1>Lista de regiones</h1>
+
+    {%for region in regions%}
+    <div>
+        {{region}}
+    </div>
+    {%endfor%}
+{%endblock%}

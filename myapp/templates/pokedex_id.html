@@ -1,10 +1,9 @@
-{% extends 'base.html'%}
+{%extends "base.html"%}
 
 {% block content%}
-    <div>
-    {% for item in database.items %}
-        {{item}}
-    {% endfor %}
-    </div>  
-
-{% endblock%}
+<div>
+    {%for value in database.values%}
+    {{value}} <br>
+    {%endfor%}
+</div>
+{%endblock%}

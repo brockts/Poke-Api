@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse,Http404
-import json,requests
+import requests
 
 # Create your views here.
 def index(request):
@@ -28,8 +28,8 @@ def pokemon_by_id(request,id: int):
         database:dict = {
             "id":data["id"],
             "name":data["name"],
-            "weight":data["weight"],
-            "height": data["height"],
+            "weight":str(round((data["weight"])*0.1,2))+ " kg",
+            "height": str(round((data["height"])*0.1,2))+ " m",
             "abilities": [skill["ability"]["name"] for skill in data["abilities"]]
         }
         sprite:str = data['sprites']['front_default']
@@ -49,8 +49,8 @@ def pokemon_by_name(request,name:str):
         database:dict = {
             "id":data["id"],
             "name":data["name"],
-            "weight":data["weight"],
-            "height": data["height"],
+            "weight":str(round((data["weight"])*0.1,2))+ " kg",
+            "height": str(round((data["height"])*0.1,2))+ " m",
             "abilities": [skill["ability"]["name"] for skill in data["abilities"]]
         }
         sprite:str = data['sprites']['front_default']
@@ -61,27 +61,45 @@ def pokemon_by_name(request,name:str):
     else:
         raise Http404
     
-def pokedex_by_id(request,id):
-    url_pokeapi = urllib.request.Request(f'https://pokeapi.co/api/v2/pokedex/{id}/')
-    url_pokeapi.add_header('User-Agent', "pikachu")
-    source = urllib.request.urlopen(url_pokeapi).read()
-    data_list = json.loads(source)
-    database = {
-        "description": str(data_list['descriptions'][2]["description"]),
-        "pokemon_entries": str(data_list['pokemon_entries'])
-    }
-    return render(request,"pokedex_id.html",{
-        "database":database
-    })
-def pokedex_by_name(request,name):
-    url_pokeapi = urllib.request.Request(f'https://pokeapi.co/api/v2/pokedex/{id}/')
-    url_pokeapi.add_header('User-Agent', "pikachu")
-    source = urllib.request.urlopen(url_pokeapi).read()
-    data_list = json.loads(source)
-    database = {
-        "description": str(data_list['descriptions'][2]["description"]),
-        "pokemon_entries": str(data_list['pokemon_entries'])
-    }
-    return render(request,"pokedex_id.html",{
-        "database":database
-    })
+def pokedex_all(request):
+    url_pokeapi:str = "https://pokeapi.co/api/v2/pokedex/?offset=0&limit=30"
+    response = requests.get(url_pokeapi)
+    if response.status_code==200:
+        data = response.json()
+        lista_regions:list = [region["name"] for region in data["results"]]
+        return render(request,"pokedex_all.html",{
+            "regions":lista_regions
+        })
+    else:
+        raise Http404
+    
+
+def pokedex_by_id(request, id:int):
+    url_pokeapi:str = f"https://pokeapi.co/api/v2/pokedex/{id}"
+    response = requests.get(url_pokeapi)
+    if response.status_code==200:
+        data = response.json()
+        database:dict = {
+            "name":data["descriptions"][2]["description"],
+            "pokemon_by_region": [pokemon["pokemon_species"]["name"] for pokemon in data["pokemon_entries"]]
+        }
+        return render(request,"pokedex_id.html",{
+            "database":database
+        })
+    else:
+        raise Http404
+
+def pokedex_by_name(request,name:str):
+    url_pokeapi:str = f"https://pokeapi.co/api/v2/pokedex/{name.casefold()}"
+    response = requests.get(url_pokeapi)
+    if response.status_code==200:
+        data = response.json()
+        database:dict = {
+            "name":data["descriptions"][2]["description"],
+            "pokemon_by_region": [pokemon["pokemon_species"]["name"] for pokemon in data["pokemon_entries"]]
+        }
+        return render(request,"pokedex_id.html",{
+            "database":database
+        })
+    else:
+        raise Http404
