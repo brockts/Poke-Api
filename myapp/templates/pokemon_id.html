@@ -2,10 +2,9 @@
 
 {% block content%}
 <div>
-    {{id}}
-    {{name}}
-    {{weight}}
-    {{height}}
-    <img src="{{sprite}}" alt="{{name}}">
+    {%for key,value in database.items%}
+    {{key}} : {{value}} <br>
+    {%endfor%}
+    <img src="{{sprite}}" alt="{{value.name}}">
 </div>
 {%endblock%}
