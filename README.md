@@ -67,3 +67,9 @@ Clone the repository to your local machine:
 - [Ian Flores](https://github.com/Ianskev)
 - [Sebastian Arquinigo](https://github.com/sebas0303)
 - [Anthony Quispe](https://github.com/Anthony-moises)
+Urls:
+	`pokemon/`, views pokemon all
+	`pokemon/<int:id>/`, views pokemon by id
+	`pokemon/<str:name>/`, views pokemon by name
+	`pokedex/`,views all pokedex
+	`pokedex/<str:name>/`, wviews pokedex by name
