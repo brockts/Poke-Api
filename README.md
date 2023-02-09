@@ -61,15 +61,16 @@ Clone the repository to your local machine:
 
 ### The API will now be available at http://127.0.0.1:8000/.
 
+## Urls:
+	`pokemon/`, views pokemon all
+	`pokemon/<int:id>/`, views pokemon by id
+	`pokemon/<str:name>/`, views pokemon by name
+	`pokedex/`,views all pokedex
+	`pokedex/<str:name>/`, wviews pokedex by name
 
 ## Authors
 
 - [Ian Flores](https://github.com/Ianskev)
 - [Sebastian Arquinigo](https://github.com/sebas0303)
 - [Anthony Quispe](https://github.com/Anthony-moises)
-Urls:
-	`pokemon/`, views pokemon all
-	`pokemon/<int:id>/`, views pokemon by id
-	`pokemon/<str:name>/`, views pokemon by name
-	`pokedex/`,views all pokedex
-	`pokedex/<str:name>/`, wviews pokedex by name
+
