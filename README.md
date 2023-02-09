@@ -1,7 +1,4 @@
 # Proyecto PokeAPI
-
-A RESTful API built with Django to retrieve data from the [PokeAPI](https://pokeapi.co/docs/v2).
-
 <br/>
 
 <div align="center">
@@ -12,4 +9,37 @@ A RESTful API built with Django to retrieve data from the [PokeAPI](https://poke
 </div>
 
 <br/>
+
+## Description
+
+A RESTful API built with Django to retrieve data from the [PokeAPI](https://pokeapi.co/docs/v2).
+
+
+## Environment Variables
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+## Prerequisites
+You need to have Python and pip installed on your machine to run the API.
+
+## Installing
+
+Clone the repository to your local machine:
+
+```bash
+    git clone https://github.com/your-username/pokeapi.git
+```
+
+## Go to the project directory
+
+```bash
+  cd POKE-API
+```
+
+## Create a virtual environment and activate it:
+
+```bash
+    python -m venv env
+    source env/bin/activate
+```
 
