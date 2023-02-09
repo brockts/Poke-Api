@@ -43,3 +43,34 @@ Clone the repository to your local machine:
     source env/bin/activate
 ```
 
+## Install the required packages:
+
+```bash
+    pip install -r requirements.txt
+```
+
+## Migrate the database:
+```bash
+    python manage.py migrate
+```
+
+## Run the development server:
+Copy code
+python manage.py runserver
+The API will now be available at http://127.0.0.1:8000/.
+Endpoints
+The API has the following endpoints:
+
+/pokemon/: returns a list of all Pokemon in the database.
+/pokemon/<id>/: returns the detail view for a specific Pokemon with the given id.
+Built With
+Django - The web framework used
+Django Rest Framework - Used for building the RESTful API
+Contributing
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+
+Versioning
+We use SemVer for versioning. For the versions available, see the tags on this repository.
+
+Authors
+Your Name - Initial work - Your Github
