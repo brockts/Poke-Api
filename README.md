@@ -1,11 +1,11 @@
 # Proyecto PokeAPI
 
-A RESTful API built with Django to retrieve data from the PokeAPI.
+A RESTful API built with Django to retrieve data from the [PokeAPI](https://pokeapi.co/docs/v2).
 
 <br/>
 
 <div align="center">
-	<img height="200" src="" alt="PokeAPI">
+	<img height="200" src="pokeapi.svg" alt="PokeAPI">
 
 <br/>
 
