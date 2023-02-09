@@ -5,7 +5,7 @@ A RESTful API built with Django to retrieve data from the [PokeAPI](https://poke
 <br/>
 
 <div align="center">
-	<img height="200" src="pokeapi.svg" alt="PokeAPI">
+	<img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
 
 <br/>
 
