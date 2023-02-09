@@ -43,3 +43,27 @@ Clone the repository to your local machine:
     source env/bin/activate
 ```
 
+## Install the required packages:
+
+```bash
+    pip install -r requirements.txt
+```
+
+## Migrate the database:
+```bash
+    python manage.py migrate
+```
+
+## Run the development server:
+```bash
+    python manage.py runserver
+```
+
+### The API will now be available at http://127.0.0.1:8000/.
+
+
+## Authors
+
+- [Ian Flores](https://github.com/Ianskev)
+- [Sebastian Arquinigo](https://github.com/sebas0303)
+- [Anthony Quispe](https://github.com/Anthony-moises)
