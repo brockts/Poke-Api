@@ -72,5 +72,5 @@ Clone the repository to your local machine:
 
 - [Ian Flores](https://github.com/Ianskev)
 - [Sebastian Arquinigo](https://github.com/sebas0303)
-- [Anthony Quispe](https://github.com/Anthony-moises)
+
 
